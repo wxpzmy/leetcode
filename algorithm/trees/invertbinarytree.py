@@ -1,5 +1,5 @@
 
-from  util.treenode import TreeNode
+from util.treenode import TreeNode
 
 # Time complexity : O(n)
 # Space complexity : O(1)
@@ -15,7 +15,7 @@ class InvertBinaryTree:
         else:
             # invert each part of tree for each one
             root.left, root.right = \
-                Solution.invertTree(self, root.right), \
-                Solution.invertTree(self, root.left)
+                InvertBinaryTree.invertTree(self, root.right), \
+                InvertBinaryTree.invertTree(self, root.left)
             return root
 
